@@ -1,0 +1,127 @@
+from turtle import *
+def dIcorner(x,y,n):
+    goto(x+int(n/8),y+int(n/8)+int(n/4))
+    down()
+    goto(x+int(n/8),y+int(n/8))
+    goto(x+int(n/8)+int(n/4),y+int(n/8))
+    up()
+    goto(x,y)
+def dIIcorner(x,y,n):
+    goto(x-int(n/8),y+int(n/8)+int(n/4))
+    down()
+    goto(x-int(n/8),y+int(n/8))
+    goto(x-int(n/8)-int(n/4),y+int(n/8))
+    up()
+    goto(x,y)
+def dIIIcorner(x,y,n):
+    goto(x-int(n/8),y-int(n/8)-int(n/4))
+    down()
+    goto(x-int(n/8),y-int(n/8))
+    goto(x-int(n/8)-int(n/4),y-int(n/8))
+    up()
+    goto(x,y)
+def dIVcorner(x,y,n):
+    goto(x+int(n/8),y-int(n/8)-int(n/4))
+    down()
+    goto(x+int(n/8),y-int(n/8))
+    goto(x+int(n/8)+int(n/4),y-int(n/8))
+    up()
+    goto(x,y)
+def dplus(x,y,n):
+    dIcorner(x,y,n)
+    dIIcorner(x,y,n)
+    dIIIcorner(x,y,n)
+    dIVcorner(x,y,n)
+
+n = int(input("Enter side length of the small square: "))
+up()
+goto(-7*n,7*n)
+pencolor("black")
+
+i = 0
+hor = 8*n
+for i in range(0,10):
+    down()
+    goto(xcor()+hor,ycor())
+    up()
+    goto(xcor()-hor,ycor()-n)
+goto(-7*n,7*n)
+
+i = 0
+ver = 9*n
+for i in range(0,9):
+    down()
+    goto(xcor(),ycor()-ver)
+    up()
+    goto(xcor()+n,ycor()+ver)
+goto(-6*n,3*n-1)
+pencolor("white")
+
+i = 0
+for i in range(0,7):
+    down()
+    goto(xcor(),ycor()-n+1)
+    up()
+    goto(xcor()+n,ycor()+n-1)
+pencolor("black")
+
+goto(-7*n,4*n)
+dIcorner(xcor(),ycor(),n)
+dIVcorner(xcor(),ycor(),n)
+goto(-5*n,ycor())
+i=0
+dis = 2*n
+for i in range(0,3):
+    dplus(xcor(),ycor(),n)
+    goto(xcor()+dis,ycor())
+dIIcorner(xcor(),ycor(),n)
+dIIIcorner(xcor(),ycor(),n)
+    
+goto(-7*n,n)
+dIcorner(xcor(),ycor(),n)
+dIVcorner(xcor(),ycor(),n)
+goto(-5*n,ycor())
+i=0
+dis = 2*n
+for i in range(0,3):
+    dplus(xcor(),ycor(),n)
+    goto(xcor()+dis,ycor())
+dIIcorner(xcor(),ycor(),n)
+dIIIcorner(xcor(),ycor(),n)
+
+goto(-6*n,5*n)
+dplus(xcor(),ycor(),n)
+goto(0,5*n)
+dplus(xcor(),ycor(),n)
+
+goto(-6*n,0)
+dplus(xcor(),ycor(),n)
+goto(0,0)
+dplus(xcor(),ycor(),n)
+
+goto(-4*n,5*n)
+down()
+goto(-2*n,7*n)
+up()
+goto(-4*n,7*n)
+down()
+goto(-2*n,5*n)
+up()
+
+goto(-4*n,-2*n)
+down()
+goto(-2*n,0)
+up()
+goto(-4*n,0)
+down()
+goto(-2*n,-2*n)
+up()
+
+goto(int(-7.25*n),int(7.25*n))
+down()
+pensize(4)
+goto(int(1.25*n),int(7.25*n))
+goto(int(1.25*n),int(-2.25*n))
+goto(int(-7.25*n),int(-2.25*n))
+goto(int(-7.25*n),int(7.25*n))
+up()
