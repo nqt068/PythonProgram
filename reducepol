@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+/*hàm này tớ muốn tú gọn đa thức, ví dụ từ (-1)*X^2+0*X+0 thành -X^2
+    INPUT: [-1,0,0] -> OUTPUT: -X^2
+    chỗ int n = sizeof(b)/sizeof(b[0]) thì sizeof(b) nó chỉ cho ra size của kiểu double thôi,
+    mình xử lý như thế nào đây?
+*/
+void reducepol(double b[]) {
+    int n = sizeof(b)/sizeof(b[0]);
+    if (b[0] == 1) {
+        cout<<"X^"<<n;
+    } else {
+        if (b[0] == -1){
+            cout<<"-X^"<<n;
+        } else {
+            cout<<b[0]<<"*X^"<<n;
+        }
+    }
+
+    for (int i = 1; i<n; i++) {
+        if (b[i] == 0) {
+        } else {
+            if (b[i] == 1) {
+                cout<<"+X^"<<n-i;
+            } else {
+                if (b[i] == -1) {
+                    cout<<"-X^"<<n-i;                    
+                } else {
+                    if (b[i] < 0) {
+                        cout<<"-"<<-b[i]<<"*X^"<<n-i;
+                    } else {
+                        cout<<"+"<<b[i]<<"*X^"<<n-i;                        
+                    }
+                }
+            }
+        }
+    }
+
+    if (b[n] == 0){
+    } else {
+        if (b[n] < 0) {
+            cout<<"-"<<-b[n]<<endl;
+        } else {
+        cout<<"+"<<b[n]<<endl;                        
+        }        
+    }
+}
+int main() {
+    double a[] = {1,1};
+    reducepol(a);
+}
