@@ -1,0 +1,17 @@
+def maxx(a):
+#hàm này dùng để tìm số lớn nhất trong một mảng số nguyên. 
+#INPUT a là một mảng số nguyên
+#OUTPUT là số lớn nhất trong mảng (đặt là ma)
+    ma = a[0]                     #gán ma cho a[0]
+    for i in range(1, len(a)):    #cho i chạy từ 1 đến số cuối của mảng (hàm len(a) trả về độ dài mảng)
+        if (a[i] > ma) :
+            ma = a[i]             #so sánh ma và các số trong mảng, nếu có số lớn hơn thì gán số đó cho ma
+            continue
+        else:
+            continue
+    return ma                     #kết quả trả về (vì đây là hàm có INPUT và OUTPUT, không phải là thủ tục)
+
+print("Enter number:", end = " ")
+s = str(input())
+a = list(map(int, s.split(" ")))  #tách chuỗi ra bằng kí tự " ", và đưa về dạng int (sử dụng hàm map())
+print(maxx(a))
